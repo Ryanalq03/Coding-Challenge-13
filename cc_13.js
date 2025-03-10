@@ -44,4 +44,17 @@ employeeCardsArray.forEach((card) => {
     card.style.border = "2px solid grey";
 });
 
+//Adding the removal of employees with event bubbling
+
+//Event listener that removes parent employee card
+emoveButton.addEventListener(`click`, (event) => {
+    employeeCard.remove();
+    event.stopPropagation();
+});
+
+//Event listener for when an employee card is clicked
+employeeCard.addEventListener('click', () => {
+    console.log(`Employee Card Clicked!`);
+})
+
 
