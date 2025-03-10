@@ -24,5 +24,13 @@ function createEmployeeCard(name, position) {
     removeButton.textContent = 'Remove';
     removeButton.setAttribute('class', 'remove-button');
     Clipboard.appendChild(removeButton);
+
+    //Adding employees
+employeeCard("Employee: Alex Earle", "Position: CNA");
+employeeCard("Employee: Parker Munari", "Position: CMA");
+employeeCard("Employee: Marla Smith", "Position: HUC");
 }
+
+
+
 
