@@ -44,7 +44,7 @@ employeeCardsArray.forEach((card) => {
     card.style.border = "2px solid grey";
 });
 
-//Adding the removal of employees with event bubbling
+//Task 4 Adding the removal of employees with event bubbling
 
 //Event listener that removes parent employee card
 emoveButton.addEventListener(`click`, (event) => {
@@ -57,4 +57,47 @@ employeeCard.addEventListener('click', () => {
     console.log(`Employee Card Clicked!`);
 })
 
+//Task 5  Inline Editing of Employee Details
+// Adds event listener for double click 
+card.addEventListener('dblclick', () => {
+    if (card.querySelector('.save-button')){
+        return;
+    }
+    
+// logs text content 
+    const currentName = empName.textContent;
+    const currentPosition = empPosition.textContent;
+    
+//Allows for input of names
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.value = empName.textContent;
+//Allows for input of employee position
+        const positionInput = document.createElement('input');
+        positionInput.type = 'text';
+        positionInput.value = empPosition.textContent;
+//Adds save button
+    const saveBtn = document.createElement('button');
+    saveBtn.setAttribute('class','save-button');
+    saveBtn.textContent = 'Save';
+    
+//Clears content and adds new imputs
+    card.innerHTML = '';
+    card.append(nameInput, document.createElement('br'), positionInput, document.createElement('br'), saveButton);
+        
+//Goes back to original card view
+    saveBtn.addEventListener('click', () => {
+        empName.textContent = nameInput.value;
+        empPosition.textContent = positionInput.value;
+    
+//Brings back updated text and removes imputs
+        card.innerHTML = '';
+        card.append(empName, empPosition, removeBtn);
+        });
+    });
+    
+//Appends container to the card
+    employeeContainer.appendChild(card);
+    
+//End of attept at Coding Challenge 13
 
