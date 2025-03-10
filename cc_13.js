@@ -31,6 +31,17 @@ employeeCard("Employee: Parker Munari", "Position: CMA");
 employeeCard("Employee: Marla Smith", "Position: HUC");
 }
 
+//Task 3 Converting NodeLists to Arrays for Bulk Updates
 
+//Selects elements with the employee card class
+const employeeCards = document.querySelectorAll(".employee-card");
+
+//Converts Nodelist into an array with spread operator
+const employeeCardsArray = [...employeeCards];
+
+//Array method to add a solid grey border to cards
+employeeCardsArray.forEach((card) => {
+    card.style.border = "2px solid grey";
+});
 
 
